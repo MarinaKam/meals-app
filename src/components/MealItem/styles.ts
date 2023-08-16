@@ -1,14 +1,11 @@
 import { Platform, StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-  gridItem: {
-    flex: 1,
+  container: {
     margin: 16,
-    height: 150,
-    borderRadius: 8,
-    elevation: 4,
-    // TODO: ios styles for shadow
+    borderRadius: 9,
     backgroundColor: 'white',
+    elevation: 4,
     shadowColor: 'black',
     shadowOpacity: 0.25,
     shadowOffset: {
@@ -18,21 +15,31 @@ export const styles = StyleSheet.create({
     shadowRadius: 8,
     overflow: Platform.OS === 'android' ? 'hidden' : 'visible',
   },
-  button: {
-    flex: 1,
-  },
   buttonPressed: {
     opacity: 0.5,
   },
-  innerWrapper: {
-    flex: 1,
-    padding: 16,
+  innerContainer: {
     borderRadius: 8,
-    justifyContent: 'center',
-    alignItems: 'center',
+    overflow: 'hidden',
+  },
+  image: {
+    width: '100%',
+    height: 200,
   },
   title: {
     fontWeight: 'bold',
+    textAlign: 'center',
     fontSize: 18,
+    margin: 8
   },
+  details: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 8,
+    gap: 8
+  },
+  detailItem: {
+    fontSize: 12
+  }
 });

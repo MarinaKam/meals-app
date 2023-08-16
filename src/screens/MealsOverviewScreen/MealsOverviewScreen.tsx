@@ -1,8 +1,9 @@
 import { FC, useMemo } from 'react';
 import { FlatList, View } from 'react-native';
+import type { RouteProp } from '@react-navigation/native';
 import { useRoute } from '@react-navigation/native';
 
-import { CategoryParamType } from '../../models/category';
+import { RootStackParamList } from '../../../App';
 import { MealItem } from '../../components/MealItem';
 import { MEALS } from '../../dummy-data/dummy-data';
 import { MealInterface } from '../../models/meal';
@@ -12,8 +13,10 @@ const renderItem = ({ item }: { item: MealInterface }) => {
   return <MealItem {...item} />;
 };
 
+type MealScreenRouteProp = RouteProp<RootStackParamList, 'MealsOverview'>;
+
 export const MealsOverviewScreen: FC = () => {
-  const route = useRoute<{ params: CategoryParamType }>();
+  const route = useRoute<MealScreenRouteProp>();
   const categoryID = route?.params?.categoryId;
   const meals: MealInterface[] = useMemo(() => (
     MEALS.filter((meal) => categoryID && meal?.categoryIds.indexOf(categoryID) >= 0)
@@ -25,7 +28,7 @@ export const MealsOverviewScreen: FC = () => {
         data={meals}
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
-        numColumns={2}
+        numColumns={1}
       />
     </View>
   );
