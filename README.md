@@ -1,3 +1,2 @@
 # meals-app
-
-react native app with expo
+react native app

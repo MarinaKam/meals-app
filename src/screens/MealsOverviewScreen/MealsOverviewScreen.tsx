@@ -18,9 +18,13 @@ type MealScreenRouteProp = RouteProp<RootStackParamList, 'MealsOverview'>;
 export const MealsOverviewScreen: FC = () => {
   const route = useRoute<MealScreenRouteProp>();
   const categoryID = route?.params?.categoryId;
-  const meals: MealInterface[] = useMemo(() => (
-    MEALS.filter((meal) => categoryID && meal?.categoryIds.indexOf(categoryID) >= 0)
-  ), [categoryID]);
+  const meals: MealInterface[] = useMemo(
+    () =>
+      MEALS.filter(
+        (meal) => categoryID && meal?.categoryIds.indexOf(categoryID) >= 0,
+      ),
+    [categoryID],
+  );
 
   return (
     <View style={styles.container}>

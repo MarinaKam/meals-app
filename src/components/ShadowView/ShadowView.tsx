@@ -8,10 +8,9 @@ interface ShadowViewInterface {
   style?: { [key: string]: string | number };
 }
 
-export const ShadowView: FC<ShadowViewInterface> = ({ children, style = {} }) => {
-  return (
-    <View style={[styles.container, style]}>
-      {children}
-    </View>
-  );
+export const ShadowView: FC<ShadowViewInterface> = ({
+  children,
+  style = {},
+}) => {
+  return <View style={[styles.container, style]}>{children}</View>;
 };

@@ -5,7 +5,7 @@ import { ShadowView } from '../ShadowView';
 import { styles } from './styles';
 
 export type MealItemProps = {
-  onPress?: () => void
+  onPress?: () => void;
 };
 
 export const MealItem: FC<MealInterface & MealItemProps> = ({
@@ -34,6 +34,6 @@ export const MealItem: FC<MealInterface & MealItemProps> = ({
           </View>
         </View>
       </Pressable>
-  </ShadowView>
+    </ShadowView>
   );
 };

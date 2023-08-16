@@ -5,7 +5,9 @@ import { CategoryInterface } from '../../models/category';
 import { ShadowView } from '../ShadowView';
 import { styles } from './styles';
 
-type CategoryGridTileType = Pick<CategoryInterface, 'title' | 'color'> & { onPress: () => void };
+type CategoryGridTileType = Pick<CategoryInterface, 'title' | 'color'> & {
+  onPress: () => void;
+};
 
 export const CategoryGridTile: FC<CategoryGridTileType> = ({
   title,

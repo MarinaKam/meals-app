@@ -14,5 +14,5 @@ export const styles = StyleSheet.create({
     },
     shadowRadius: 8,
     overflow: Platform.OS === 'android' ? 'hidden' : 'visible',
-  }
+  },
 });
