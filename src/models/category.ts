@@ -17,3 +17,16 @@ class Category {
 }
 
 export default Category;
+
+export type CategoryParamType = {
+  categoryId: string;
+};
+
+export type CategoryNavType = {
+  navigate: (value: string, { categoryId: string }) => void;
+};
+
+export type CategoryItemDataType = {
+  item: CategoryInterface;
+  navigation: CategoryNavType;
+};
