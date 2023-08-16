@@ -1,1 +1,1 @@
-export * from "./CategoryGridTile";
+export * from './CategoryGridTile';
