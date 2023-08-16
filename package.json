@@ -4,9 +4,12 @@
   "main": "node_modules/expo/AppEntry.js",
   "private": true,
   "scripts": {
+    "prepare": "husky install",
+    "pre-commit": "lint-staged",
     "prettier": "prettier '**/*' --check --ignore-unknown",
     "prettier:write": "prettier '**/*' --write --ignore-unknown",
     "ts:check": "tsc --noEmit",
+    "check": "npm run lint",
     "lint": "eslint ./src --max-warnings=0",
     "lint-fix": "eslint ./src --fix --max-warnings=0",
     "preios": "npm run ts:check",
