@@ -23,7 +23,7 @@ export type CategoryParamType = {
 };
 
 export type CategoryNavType = {
-  navigate: (value: string, { categoryId: string }) => void;
+  navigate: (value: string, options: { categoryId: string }) => void;
 };
 
 export type CategoryItemDataType = {

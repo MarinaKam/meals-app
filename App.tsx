@@ -16,7 +16,7 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 const App: FC = () => {
   return (
     <>
-      <StatusBar style="dark" />
+      <StatusBar style="light" />
 
       <NavigationContainer>
         <Stack.Navigator
