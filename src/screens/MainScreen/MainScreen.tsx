@@ -8,8 +8,9 @@ import { CATEGORIES } from '../../dummy-data/dummy-data';
 
 const renderItem = ({ item, navigation }: CategoryItemDataType) => {
   const onPress = () => {
-    const params: { categoryId: string } = {
+    const params: { categoryId: string; title: string } = {
       categoryId: item.id,
+      title: item.title,
     };
 
     navigation.navigate('MealsOverview', params);

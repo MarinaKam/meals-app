@@ -14,12 +14,14 @@ export const MealItem: FC<MealInterface & MealItemProps> = ({
   duration,
   complexity,
   affordability,
+  onPress,
 }) => {
   return (
     <ShadowView>
       <Pressable
         android_ripple={{ color: '#ccc' }}
         style={({ pressed }) => (pressed ? styles.buttonPressed : null)}
+        onPress={onPress}
       >
         <View style={styles.innerContainer}>
           <View>
