@@ -1,3 +1,5 @@
+import { MealInterface } from './meal';
+
 export interface CategoryInterface {
   id: string;
   title: string;
@@ -20,6 +22,7 @@ export default Category;
 
 export type CategoryParamType = {
   categoryId: string;
+  title: string;
 };
 
 export type CategoryNavType = {
@@ -29,4 +32,18 @@ export type CategoryNavType = {
 export type CategoryItemDataType = {
   item: CategoryInterface;
   navigation: CategoryNavType;
+};
+
+export type NavType = {
+  navigate: (value: string, options: { mealID: string }) => void;
+};
+
+export type MealDetailsType = {
+  item: MealInterface;
+  navigation: NavType;
+};
+
+export type MealDetailsParamType = {
+  mealID: string;
+  title: string;
 };
