@@ -9,7 +9,11 @@ interface IconButtonInterface {
   onPress: () => void;
 }
 
-export const IconButton: FC<IconButtonInterface> = ({ icon, color, onPress }) => {
+export const IconButton: FC<IconButtonInterface> = ({
+  icon,
+  color,
+  onPress,
+}) => {
   return (
     <Pressable
       style={({ pressed }) => pressed && styles.pressed}

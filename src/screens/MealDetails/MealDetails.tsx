@@ -3,7 +3,12 @@ import { Image, Text, View, ScrollView } from 'react-native';
 import { RouteProp, useRoute } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/core';
 import { RootStackParamList } from '../../../App';
-import { List, MealDetails as Details, Subtitle, IconButton } from '../../components';
+import {
+  List,
+  MealDetails as Details,
+  Subtitle,
+  IconButton,
+} from '../../components';
 import { MEALS } from '../../dummy-data/dummy-data';
 import { MealInterface } from '../../models/meal';
 import { styles } from './styles';
@@ -37,7 +42,7 @@ export const MealDetails: FC = () => {
           icon="star"
           onPress={handleHeaderButtonPress}
         />
-      )
+      ),
     });
   }, [route?.params, navigation, handleHeaderButtonPress]);
 
@@ -54,9 +59,9 @@ export const MealDetails: FC = () => {
 
       <View style={styles.listOuterContainer}>
         <View style={styles.listContainer}>
-          <Subtitle title="Ingredients"  />
+          <Subtitle title="Ingredients" />
           <List items={(selectedMeal?.ingredients || []) as string[]} />
-          <Subtitle title="Steps"  />
+          <Subtitle title="Steps" />
           <List items={(selectedMeal?.steps || []) as string[]} />
         </View>
       </View>
