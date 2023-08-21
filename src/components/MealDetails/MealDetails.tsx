@@ -4,9 +4,9 @@ import { MealInterface } from '../../models/meal';
 import { styles } from './styles';
 
 interface MealDetailsInterface {
-  duration: MealInterface['duration'];
-  complexity: MealInterface['complexity'];
-  affordability: MealInterface['affordability'];
+  duration: MealInterface['duration'] | undefined;
+  complexity: MealInterface['complexity'] | undefined;
+  affordability: MealInterface['affordability'] | undefined;
   style?: { [key: string]: string | number };
   textStyle?: { [key: string]: string | number };
 }

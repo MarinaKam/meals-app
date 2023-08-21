@@ -45,14 +45,19 @@ export const MealDetails: FC = () => {
     <ScrollView style={styles.container}>
       <Image source={{ uri: selectedMeal?.imageUrl }} style={styles.image} />
       <Text style={styles.title}>{selectedMeal?.title}</Text>
-      <Details {...selectedMeal} textStyle={styles.detailText} />
+      <Details
+        duration={selectedMeal?.duration}
+        complexity={selectedMeal?.complexity}
+        affordability={selectedMeal?.affordability}
+        textStyle={styles.detailText}
+      />
 
       <View style={styles.listOuterContainer}>
         <View style={styles.listContainer}>
           <Subtitle title="Ingredients"  />
-          <List items={selectedMeal?.ingredients} />
+          <List items={(selectedMeal?.ingredients || []) as string[]} />
           <Subtitle title="Steps"  />
-          <List items={selectedMeal?.steps} />
+          <List items={(selectedMeal?.steps || []) as string[]} />
         </View>
       </View>
     </ScrollView>
