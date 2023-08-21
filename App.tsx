@@ -6,7 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { MealsOverviewScreen } from './src/screens/MealsOverviewScreen';
 import { CategoryParamType, MealDetailsParamType } from './src/models/category';
 import { MealDetails } from './src/screens/MealDetails';
-import { DrawerNavigation } from './src/components/navigation';
+import { DrawerNavigator } from './src/components/navigation';
 
 export type RootStackParamList = {
   MealsCategories: undefined;
@@ -24,13 +24,18 @@ const App: FC = () => {
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{
-            headerShown: false,
             headerStyle: { backgroundColor: '#351401' },
             headerTintColor: 'white',
             contentStyle: { backgroundColor: '#3f2f25' },
           }}
         >
-          <Stack.Screen name="Drawer" component={DrawerNavigation} />
+          <Stack.Screen
+            name="Drawer"
+            component={DrawerNavigator}
+            options={{
+              headerShown: false,
+            }}
+          />
           <Stack.Screen name="MealsOverview" component={MealsOverviewScreen} />
           <Stack.Screen name="MealDetail" component={MealDetails} />
         </Stack.Navigator>

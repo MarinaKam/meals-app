@@ -7,12 +7,12 @@ module.exports = function (api) {
       '@babel/typescript',
     ],
     plugins: [
-      // [
-      //   "module-resolver",
-      //   {
-      //     extensions: [".tsx", ".ts", ".js", ".json"],
-      //   },
-      // ],
+      [
+        "module-resolver",
+        {
+          extensions: [".tsx", ".ts", ".js", ".json"],
+        },
+      ],
       'react-native-reanimated/plugin',
     ],
   };
