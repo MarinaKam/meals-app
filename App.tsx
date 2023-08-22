@@ -8,6 +8,7 @@ import { DrawerNavigator } from './src/components/navigation';
 import { CategoryParamType, MealDetailsParamType } from './src/models/category';
 import { MealDetails } from './src/screens/MealDetails';
 import { MealsOverviewScreen } from './src/screens/MealsOverviewScreen';
+import { FavoritesProvider } from './src/store/context';
 
 export type RootStackParamList = {
   MealsCategories: undefined;
@@ -23,25 +24,27 @@ const App: FC = () => {
     <>
       <StatusBar style="light" />
 
-      <NavigationContainer>
-        <Stack.Navigator
-          screenOptions={{
-            headerStyle: { backgroundColor: '#351401' },
-            headerTintColor: 'white',
-            contentStyle: { backgroundColor: '#3f2f25' },
-          }}
-        >
-          <Stack.Screen
-            name="Drawer"
-            component={DrawerNavigator}
-            options={{
-              headerShown: false,
+      <FavoritesProvider>
+        <NavigationContainer>
+          <Stack.Navigator
+            screenOptions={{
+              headerStyle: { backgroundColor: '#351401' },
+              headerTintColor: 'white',
+              contentStyle: { backgroundColor: '#3f2f25' },
             }}
-          />
-          <Stack.Screen name="MealsOverview" component={MealsOverviewScreen} />
-          <Stack.Screen name="MealDetail" component={MealDetails} />
-        </Stack.Navigator>
-      </NavigationContainer>
+          >
+            <Stack.Screen
+              name="Drawer"
+              component={DrawerNavigator}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen name="MealsOverview" component={MealsOverviewScreen} />
+            <Stack.Screen name="MealDetail" component={MealDetails} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </FavoritesProvider>
     </>
   );
 };

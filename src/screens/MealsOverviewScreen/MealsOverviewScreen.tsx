@@ -2,27 +2,11 @@ import { useNavigation } from '@react-navigation/core';
 import type { RouteProp } from '@react-navigation/native';
 import { useRoute } from '@react-navigation/native';
 import { FC, useLayoutEffect, useMemo } from 'react';
-import { FlatList, View } from 'react-native';
 
-import { styles } from './styles';
 import { RootStackParamList } from '../../../App';
-import { MealItem } from '../../components/MealItem';
+import { MealsList } from '../../components/MealsList';
 import { MEALS, CATEGORIES } from '../../dummy-data/dummy-data';
-import { MealDetailsType } from '../../models/category';
 import { MealInterface } from '../../models/meal';
-
-const renderItem = ({ item, navigation }: MealDetailsType) => {
-  const onPress = () => {
-    const params: { mealID: string; title: string } = {
-      mealID: item.id,
-      title: item.title,
-    };
-
-    navigation.navigate('MealDetail', params);
-  };
-
-  return <MealItem {...item} onPress={onPress} />;
-};
 
 export type MealScreenRouteProp = RouteProp<RootStackParamList, 'MealsOverview'>;
 
@@ -46,14 +30,5 @@ export const MealsOverviewScreen: FC = () => {
     });
   }, [categoryTitle, navigation]);
 
-  return (
-    <View style={styles.container}>
-      <FlatList
-        data={meals}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => renderItem({ item, navigation })}
-        numColumns={1}
-      />
-    </View>
-  );
+  return <MealsList items={meals} />;
 };
