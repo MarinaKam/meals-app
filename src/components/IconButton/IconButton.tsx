@@ -1,6 +1,7 @@
+import { Ionicons } from '@expo/vector-icons';
 import { FC } from 'react';
 import { Pressable } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+
 import { styles } from './styles';
 
 interface IconButtonInterface {
@@ -9,16 +10,9 @@ interface IconButtonInterface {
   onPress: () => void;
 }
 
-export const IconButton: FC<IconButtonInterface> = ({
-  icon,
-  color,
-  onPress,
-}) => {
+export const IconButton: FC<IconButtonInterface> = ({ icon, color, onPress }) => {
   return (
-    <Pressable
-      style={({ pressed }) => pressed && styles.pressed}
-      onPress={onPress}
-    >
+    <Pressable style={({ pressed }) => pressed && styles.pressed} onPress={onPress}>
       <Ionicons size={24} name={icon} color={color} />
     </Pressable>
   );

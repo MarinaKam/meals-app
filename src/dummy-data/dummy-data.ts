@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+
 import Category, { CategoryInterface } from '../models/category';
 import Meal, { MealInterface } from '../models/meal';
 
@@ -23,14 +25,7 @@ export const MEALS: MealInterface[] = [
     'simple',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg/800px-Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg',
     20,
-    [
-      '4 Tomatoes',
-      '1 Tablespoon of Olive Oil',
-      '1 Onion',
-      '250g Spaghetti',
-      'Spices',
-      'Cheese (optional)',
-    ],
+    ['4 Tomatoes', '1 Tablespoon of Olive Oil', '1 Onion', '250g Spaghetti', 'Spices', 'Cheese (optional)'],
     [
       'Cut the tomatoes and the onion into small pieces.',
       'Boil some water - add salt to it once it boils.',
@@ -43,7 +38,7 @@ export const MEALS: MealInterface[] = [
     false,
     true,
     true,
-    true,
+    true
   ),
 
   new Meal(
@@ -54,13 +49,7 @@ export const MEALS: MealInterface[] = [
     'simple',
     'https://cdn.pixabay.com/photo/2018/07/11/21/51/toast-3532016_1280.jpg',
     10,
-    [
-      '1 Slice White Bread',
-      '1 Slice Ham',
-      '1 Slice Pineapple',
-      '1-2 Slices of Cheese',
-      'Butter',
-    ],
+    ['1 Slice White Bread', '1 Slice Ham', '1 Slice Pineapple', '1-2 Slices of Cheese', 'Butter'],
     [
       'Butter one side of the white bread',
       'Layer ham, the pineapple and cheese on the white bread',
@@ -69,7 +58,7 @@ export const MEALS: MealInterface[] = [
     false,
     false,
     false,
-    false,
+    false
   ),
 
   new Meal(
@@ -80,14 +69,7 @@ export const MEALS: MealInterface[] = [
     'simple',
     'https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg',
     45,
-    [
-      '300g Cattle Hack',
-      '1 Tomato',
-      '1 Cucumber',
-      '1 Onion',
-      'Ketchup',
-      '2 Burger Buns',
-    ],
+    ['300g Cattle Hack', '1 Tomato', '1 Cucumber', '1 Onion', 'Ketchup', '2 Burger Buns'],
     [
       'Form 2 patties',
       'Fry the patties for c. 4 minutes on each side',
@@ -98,7 +80,7 @@ export const MEALS: MealInterface[] = [
     false,
     false,
     false,
-    true,
+    true
   ),
 
   new Meal(
@@ -131,7 +113,7 @@ export const MEALS: MealInterface[] = [
     false,
     false,
     false,
-    false,
+    false
   ),
 
   new Meal(
@@ -163,7 +145,7 @@ export const MEALS: MealInterface[] = [
     true,
     false,
     true,
-    true,
+    true
   ),
 
   new Meal(
@@ -174,14 +156,7 @@ export const MEALS: MealInterface[] = [
     'hard',
     'https://cdn.pixabay.com/photo/2017/05/01/05/18/pastry-2274750_1280.jpg',
     240,
-    [
-      '4 Sheets of Gelatine',
-      '150ml Orange Juice',
-      '80g Sugar',
-      '300g Yoghurt',
-      '200g Cream',
-      'Orange Peel',
-    ],
+    ['4 Sheets of Gelatine', '150ml Orange Juice', '80g Sugar', '300g Yoghurt', '200g Cream', 'Orange Peel'],
     [
       'Dissolve gelatine in pot',
       'Add orange juice and sugar',
@@ -196,7 +171,7 @@ export const MEALS: MealInterface[] = [
     true,
     false,
     true,
-    false,
+    false
   ),
 
   new Meal(
@@ -225,7 +200,7 @@ export const MEALS: MealInterface[] = [
     true,
     false,
     true,
-    false,
+    false
   ),
 
   new Meal(
@@ -256,7 +231,7 @@ export const MEALS: MealInterface[] = [
     true,
     false,
     false,
-    true,
+    true
   ),
 
   new Meal(
@@ -303,7 +278,7 @@ export const MEALS: MealInterface[] = [
     true,
     false,
     true,
-    false,
+    false
   ),
   new Meal(
     'm10',
@@ -313,13 +288,7 @@ export const MEALS: MealInterface[] = [
     'simple',
     'https://cdn.pixabay.com/photo/2018/04/09/18/26/asparagus-3304997_1280.jpg',
     30,
-    [
-      'White and Green Asparagus',
-      '30g Pine Nuts',
-      '300g Cherry Tomatoes',
-      'Salad',
-      'Salt, Pepper and Olive Oil',
-    ],
+    ['White and Green Asparagus', '30g Pine Nuts', '300g Cherry Tomatoes', 'Salad', 'Salt, Pepper and Olive Oil'],
     [
       'Wash, peel and cut the asparagus',
       'Cook in salted water',
@@ -332,6 +301,6 @@ export const MEALS: MealInterface[] = [
     true,
     true,
     true,
-    true,
+    true
   ),
 ];

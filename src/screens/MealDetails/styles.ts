@@ -3,36 +3,17 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
   container: {},
 
-  image: {
-    width: '100%',
-    height: 350,
-  },
-
-  title: {
-    fontWeight: 'bold',
-    fontSize: 24,
-    margin: 8,
-    textAlign: 'center',
-    color: 'white',
-  },
-
-  subtitleContainer: {
-    borderBottomColor: '#e2b497',
-    borderBottomWidth: 2,
-    padding: 6,
-    marginHorizontal: 24,
-    marginVertical: 4,
-  },
-
-  subtitle: {
-    fontWeight: 'bold',
-    fontSize: 18,
-    color: '#e2b497',
-    textAlign: 'center',
-  },
-
   detailText: {
     color: 'white',
+  },
+
+  image: {
+    height: 350,
+    width: '100%',
+  },
+
+  listContainer: {
+    width: '80%',
   },
 
   listOuterContainer: {
@@ -40,7 +21,26 @@ export const styles = StyleSheet.create({
     paddingBottom: 40,
   },
 
-  listContainer: {
-    width: '80%',
+  subtitle: {
+    color: '#e2b497',
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+
+  subtitleContainer: {
+    borderBottomColor: '#e2b497',
+    borderBottomWidth: 2,
+    marginHorizontal: 24,
+    marginVertical: 4,
+    padding: 6,
+  },
+
+  title: {
+    color: 'white',
+    fontSize: 24,
+    fontWeight: 'bold',
+    margin: 8,
+    textAlign: 'center',
   },
 });

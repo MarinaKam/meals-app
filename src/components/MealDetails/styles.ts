@@ -1,45 +1,45 @@
 import { Platform, StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
+  buttonPressed: {
+    opacity: 0.5,
+  },
   container: {
-    margin: 16,
-    borderRadius: 9,
     backgroundColor: 'white',
+    borderRadius: 9,
     elevation: 4,
+    margin: 16,
+    overflow: Platform.OS === 'android' ? 'hidden' : 'visible',
     shadowColor: 'black',
-    shadowOpacity: 0.25,
     shadowOffset: {
       width: 0,
       height: 2,
     },
+    shadowOpacity: 0.25,
     shadowRadius: 8,
-    overflow: Platform.OS === 'android' ? 'hidden' : 'visible',
   },
-  buttonPressed: {
-    opacity: 0.5,
+  detailItem: {
+    fontSize: 12,
+  },
+  details: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    gap: 8,
+    justifyContent: 'center',
+    padding: 8,
+  },
+  image: {
+    height: 200,
+    width: '100%',
   },
   innerContainer: {
     borderRadius: 8,
     overflow: 'hidden',
   },
-  image: {
-    width: '100%',
-    height: 200,
-  },
   title: {
-    fontWeight: 'bold',
-    textAlign: 'center',
     fontSize: 18,
+    fontWeight: 'bold',
     margin: 8,
-  },
-  details: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 8,
-    gap: 8,
-  },
-  detailItem: {
-    fontSize: 12,
+    textAlign: 'center',
   },
 });

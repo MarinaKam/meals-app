@@ -1,15 +1,15 @@
+import { useNavigation } from '@react-navigation/core';
+import type { RouteProp } from '@react-navigation/native';
+import { useRoute } from '@react-navigation/native';
 import { FC, useLayoutEffect, useMemo } from 'react';
 import { FlatList, View } from 'react-native';
-import type { RouteProp } from '@react-navigation/native';
-import { useNavigation } from '@react-navigation/core';
-import { useRoute } from '@react-navigation/native';
 
+import { styles } from './styles';
 import { RootStackParamList } from '../../../App';
 import { MealItem } from '../../components/MealItem';
 import { MEALS, CATEGORIES } from '../../dummy-data/dummy-data';
-import { MealInterface } from '../../models/meal';
 import { MealDetailsType } from '../../models/category';
-import { styles } from './styles';
+import { MealInterface } from '../../models/meal';
 
 const renderItem = ({ item, navigation }: MealDetailsType) => {
   const onPress = () => {
@@ -24,10 +24,7 @@ const renderItem = ({ item, navigation }: MealDetailsType) => {
   return <MealItem {...item} onPress={onPress} />;
 };
 
-export type MealScreenRouteProp = RouteProp<
-  RootStackParamList,
-  'MealsOverview'
->;
+export type MealScreenRouteProp = RouteProp<RootStackParamList, 'MealsOverview'>;
 
 export const MealsOverviewScreen: FC = () => {
   const route = useRoute<MealScreenRouteProp>();
@@ -35,14 +32,11 @@ export const MealsOverviewScreen: FC = () => {
   const categoryID = route?.params?.categoryId;
   const categoryTitle = useMemo<string | undefined>(
     () => CATEGORIES?.find((item) => item?.id === categoryID)?.title,
-    [categoryID],
+    [categoryID]
   );
   const meals: MealInterface[] = useMemo(
-    () =>
-      MEALS.filter(
-        (meal) => categoryID && meal?.categoryIds.indexOf(categoryID) >= 0,
-      ),
-    [categoryID],
+    () => MEALS.filter((meal) => categoryID && meal?.categoryIds.indexOf(categoryID) >= 0),
+    [categoryID]
   );
 
   useLayoutEffect(() => {
@@ -50,7 +44,7 @@ export const MealsOverviewScreen: FC = () => {
       title: categoryTitle,
       headerBackTitle: 'Back',
     });
-  }, [categoryTitle]);
+  }, [categoryTitle, navigation]);
 
   return (
     <View style={styles.container}>

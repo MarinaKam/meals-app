@@ -1,26 +1,26 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-  gridItem: {
-    flex: 1,
-    height: 150,
-    margin: 16,
-  },
   button: {
     flex: 1,
   },
   buttonPressed: {
     opacity: 0.5,
   },
-  innerWrapper: {
+  gridItem: {
     flex: 1,
-    padding: 16,
-    borderRadius: 8,
-    justifyContent: 'center',
+    height: 150,
+    margin: 16,
+  },
+  innerWrapper: {
     alignItems: 'center',
+    borderRadius: 8,
+    flex: 1,
+    justifyContent: 'center',
+    padding: 16,
   },
   title: {
-    fontWeight: 'bold',
     fontSize: 18,
+    fontWeight: 'bold',
   },
 });

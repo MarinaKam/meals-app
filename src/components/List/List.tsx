@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { View, Text } from 'react-native';
+
 import { styles } from './styles';
 
 export const List: FC<{ items: string[] }> = ({ items = [] }) => {

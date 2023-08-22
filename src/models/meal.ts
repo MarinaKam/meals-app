@@ -28,7 +28,7 @@ class Meal {
     public isGlutenFree: boolean,
     public isVegan: boolean,
     public isVegetarian: boolean,
-    public isLactoseFree: boolean,
+    public isLactoseFree: boolean
   ) {
     this.id = id;
     this.categoryIds = categoryIds;

@@ -1,6 +1,7 @@
-import { FC } from 'react';
-import { createDrawerNavigator } from '@react-navigation/drawer';
 import { Ionicons } from '@expo/vector-icons';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { FC } from 'react';
+
 import { FavoritesScreen, MainScreen } from '../../screens';
 
 const Drawer = createDrawerNavigator();
@@ -26,18 +27,14 @@ export const DrawerNavigator: FC = () => {
         component={MainScreen}
         options={{
           title: 'All Categories',
-          drawerIcon: ({ color, size }) => (
-            <Ionicons name="list" color={color} size={size} />
-          ),
+          drawerIcon: ({ color, size }) => <Ionicons name="list" color={color} size={size} />,
         }}
       />
       <Drawer.Screen
         name="Favorites"
         component={FavoritesScreen}
         options={{
-          drawerIcon: ({ color, size }) => (
-            <Ionicons name="star" color={color} size={size} />
-          ),
+          drawerIcon: ({ color, size }) => <Ionicons name="star" color={color} size={size} />,
         }}
       />
     </Drawer.Navigator>

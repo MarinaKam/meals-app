@@ -1,15 +1,17 @@
 import 'react-native-gesture-handler';
-import { FC } from 'react';
-import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { MealsOverviewScreen } from './src/screens/MealsOverviewScreen';
+import { StatusBar } from 'expo-status-bar';
+import { FC } from 'react';
+
+import { DrawerNavigator } from './src/components/navigation';
 import { CategoryParamType, MealDetailsParamType } from './src/models/category';
 import { MealDetails } from './src/screens/MealDetails';
-import { DrawerNavigator } from './src/components/navigation';
+import { MealsOverviewScreen } from './src/screens/MealsOverviewScreen';
 
 export type RootStackParamList = {
   MealsCategories: undefined;
+  Drawer: undefined;
   MealsOverview: CategoryParamType;
   MealDetail: MealDetailsParamType;
 };
