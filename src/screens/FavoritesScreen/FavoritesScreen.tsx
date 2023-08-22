@@ -1,10 +1,13 @@
 import { FC } from 'react';
-import { Text, View } from 'react-native';
+
+import { MealsList } from '../../components/MealsList';
+import { MEALS } from '../../dummy-data/dummy-data';
+import { useAppSelector } from '../../hooks';
 
 export const FavoritesScreen: FC = () => {
-  return (
-    <View>
-      <Text>FavoritesScreen</Text>
-    </View>
-  );
+  const favorites = useAppSelector((state) => state.favorites);
+
+  const favorMeals = MEALS.filter((meal) => favorites.includes(meal.id));
+
+  return <MealsList items={favorMeals} />;
 };

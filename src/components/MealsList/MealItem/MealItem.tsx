@@ -2,9 +2,9 @@ import { FC } from 'react';
 import { View, Text, Pressable, Image } from 'react-native';
 
 import { styles } from './styles';
-import { MealInterface } from '../../models/meal';
-import { MealDetails } from '../MealDetails';
-import { ShadowView } from '../ShadowView';
+import { MealInterface } from '../../../models/meal';
+import { MealDetails } from '../../MealDetails';
+import { ShadowView } from '../../ShadowView';
 
 export type MealItemProps = {
   onPress?: () => void;
