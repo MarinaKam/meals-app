@@ -1,9 +1,10 @@
 import { FC } from 'react';
 import { View, Text, Pressable, Image } from 'react-native';
-import { MealInterface } from '../../models/meal';
-import { ShadowView } from '../ShadowView';
-import { MealDetails } from '../MealDetails';
+
 import { styles } from './styles';
+import { MealInterface } from '../../models/meal';
+import { MealDetails } from '../MealDetails';
+import { ShadowView } from '../ShadowView';
 
 export type MealItemProps = {
   onPress?: () => void;
@@ -30,11 +31,7 @@ export const MealItem: FC<MealInterface & MealItemProps> = ({
             <Text style={styles.title}>{title}</Text>
           </View>
 
-          <MealDetails
-            duration={duration}
-            complexity={complexity}
-            affordability={affordability}
-          />
+          <MealDetails duration={duration} complexity={complexity} affordability={affordability} />
         </View>
       </Pressable>
     </ShadowView>
