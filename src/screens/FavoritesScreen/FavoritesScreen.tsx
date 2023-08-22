@@ -1,12 +1,13 @@
-import { FC, useContext } from 'react';
+import { FC } from 'react';
 
 import { MealsList } from '../../components/MealsList';
 import { MEALS } from '../../dummy-data/dummy-data';
-import { FavoritesContext } from '../../store/context';
+import { useAppSelector } from '../../hooks';
 
 export const FavoritesScreen: FC = () => {
-  const { selectedIDs } = useContext(FavoritesContext);
-  const favorMeals = MEALS.filter((meal) => selectedIDs.includes(meal.id));
+  const favorites = useAppSelector((state) => state.favorites);
+
+  const favorMeals = MEALS.filter((meal) => favorites.includes(meal.id));
 
   return <MealsList items={favorMeals} />;
 };

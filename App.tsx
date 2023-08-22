@@ -3,12 +3,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import { FC } from 'react';
+import { Provider } from 'react-redux';
 
 import { DrawerNavigator } from './src/components/navigation';
 import { CategoryParamType, MealDetailsParamType } from './src/models/category';
 import { MealDetails } from './src/screens/MealDetails';
 import { MealsOverviewScreen } from './src/screens/MealsOverviewScreen';
-import { FavoritesProvider } from './src/store/context';
+import { store } from './src/store';
 
 export type RootStackParamList = {
   MealsCategories: undefined;
@@ -24,7 +25,7 @@ const App: FC = () => {
     <>
       <StatusBar style="light" />
 
-      <FavoritesProvider>
+      <Provider store={store}>
         <NavigationContainer>
           <Stack.Navigator
             screenOptions={{
@@ -44,7 +45,7 @@ const App: FC = () => {
             <Stack.Screen name="MealDetail" component={MealDetails} />
           </Stack.Navigator>
         </NavigationContainer>
-      </FavoritesProvider>
+      </Provider>
     </>
   );
 };
