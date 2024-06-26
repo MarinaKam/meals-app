@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "meals-app",
+    "name": "My Recipe Book",
     "slug": "meals-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -12,14 +12,19 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "experiments": {
-      "tsconfigPaths": true
+    "updates": {
+      "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "buildNumber": "1.0.0",
+      "supportsTablet": true,
+      "bundleIdentifier": "com.mariekam.my-recipe-book"
     },
     "android": {
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -27,6 +32,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e0019520-418f-4f01-b5d7-967831b1c0d4"
+      }
     }
   }
 }
